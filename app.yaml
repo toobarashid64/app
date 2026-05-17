@@ -1,2 +1,4 @@
-echo "runtime: python311" > app.yaml
-echo "entrypoint: gunicorn -b :\$PORT main:app" >> app.yaml
+cat << 'EOF' > app.yaml
+runtime: python311
+entrypoint: gunicorn -b :$PORT main:app
+EOF
